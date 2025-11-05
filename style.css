@@ -292,6 +292,7 @@ h1, .display-1 {
     }
      .geo-mobile-center { font-size: 0.8rem;
 }
+    }
 
 /* ------------ Form Contatti ------------ */
 #contactForm .form-control {
@@ -546,5 +547,6 @@ header#header {
 #servizi {
   margin-top: 2.9rem;
 }
+
 
 
