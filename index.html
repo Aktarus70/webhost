@@ -13,13 +13,26 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* rimuovo sottolineatura e imposta colore hover*/
+        .dev-link {
+            text-decoration: none !important;
+            color: #e7eeec !important;
+            font-size: 0.89em;
+            font-family: var(--font-cta);
+        }
+        .dev-link:hover, .dev-link:focus {
+            color: var(--color-gold) !important;
+            text-decoration: none !important;
+        }
+    </style>
 </head> 
 <body>
     <!-- HEADER: Sticky, navigazione orizzontale -->
     <header id="header" class="sticky-top bg-white shadow-sm" aria-label="Principale">
         <nav class="navbar navbar-expand-lg navbar-dark container py-2" role="navigation">
     <a href="#hero" class="navbar-brand d-flex align-items-center me-auto">
-        <img src="Immagine.png" alt="Logo Marina del Sole" height="50">
+        <img src="Immagine.png" alt="Logo Marina del Sole" height="60">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -85,7 +98,7 @@
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <h2 class="section-title">Chi Siamo</h2>
                 <p>
-                    Marina del Sole è il porto turistico di riferimento per gli amanti della nautica in acque dolci. Fondato nel 1985, offriamo ormeggi sicuri, un esclusivo yacht club, un ristorante panoramico e un cantiere nautico specializzato nel refitting di imbarcazioni fino a 30 metri.<br>La nostra missione: unire tradizione marinara e comfort moderno.
+                    Marina del Sole è il porto turistico di riferimento per gli amanti della nautica in acque dolci. Fondato nel 1985, offriamo ormeggi sicuri, un esclusivo yacht club, un ristorante panoramico e un cantiere nautico specializzato nel refitting di imbarcazioni fino a 25 metri.<br>La nostra missione: unire tradizione marinara e comfort moderno.
                 </p>
             </div>
             <div class="col-lg-6 text-center">
@@ -112,8 +125,8 @@
                     <div class="servizi-card flex-fill p-3 text-center rounded shadow-sm m-0">
                         <img src="./ristorante.jpg" class="mb-3 rounded card-img-uniform" alt="Ristorante La Meridiana" width="100%" loading="lazy">
                         <div class="card-content">
-                            <h5>Ristorante Vista Fiume</h5>
-                            <p>Benvenuti al nostro ristorante, dove la cucina di mare e terra si incontra con la bellezza del mare. I nostri chef selezionano i migliori ingredienti freschi per creare piatti che soddisfano ogni palato. Dalle specialità di pesce ai piatti di carne, ogni cosa è preparata con cura e dedizione. Il nostro servizio è attento e professionale, garantendo un'esperienza culinaria indimenticabile. Goditi il tuo pasto con noi, mentre ammiri la bellezza della marina. Siamo qui per aiutarti a creare ricordi gastronomici unici, in un'atmosfera elegante e rilassata.</p>
+                            <h5>Ristorante sul Fiume</h5>
+                            <p>Benvenuti al nostro ristorante, dove la cucina di mare e terra si incontra con la bellezza del mare. I nostri chef selezionano i migliori ingredienti freschi per creare piatti che soddisfano ogni palato. Dalle specialità di pesce ai piatti di carne, ogni cosa è preparata con cura e dedizione. Goditi il tuo pasto con noi, mentre ammiri la bellezza della marina. Siamo qui per aiutarti a creare ricordi gastronomici unici, in un'atmosfera elegante e rilassata.</p>
                         </div>
                     </div>
                 </div>
@@ -122,7 +135,7 @@
                         <img src="./travelift.jpg" class="mb-3 rounded card-img-uniform" alt="Cantiere Nautico (Unsplash)" width="100%" loading="lazy">
                         <div class="card-content">
                             <h5>Cantiere Nautico</h5>
-                            <p>Il nostro cantiere nautico è equipaggiato con le migliori tecnologie e personale altamente qualificato per offrire servizi di riparazione, refitting e manutenzione per imbarcazioni fino a 30m. Dai lavori di ordinaria manutenzione alle riparazioni più complesse. Il nostro obiettivo è quello di mantenere la tua imbarcazione in condizioni ottimali, garantendo la tua sicurezza e il tuo piacere di navigare. Affidati a noi per tutte le tue esigenze di manutenzione e riparazione, e scopri la differenza che fa la nostra esperienza e professionalità. Siamo qui per aiutarti a mantenere la tua imbarcazione al meglio, in modo che tu possa goderti il mare in tutta sicurezza e tranquillità.</p>
+                            <p>Il nostro cantiere nautico è equipaggiato con le migliori tecnologie e personale altamente qualificato per offrire servizi di riparazione, refitting e manutenzione per imbarcazioni fino a 30m. Dai lavori di ordinaria manutenzione alle riparazioni più complesse. Il nostro obiettivo è quello di mantenere la tua imbarcazione in condizioni ottimali, garantendo la tua sicurezza e il tuo piacere di navigare. Affidati a noi per tutte le tue esigenze di manutenzione. Scopri la differenza che fa la nostra esperienza e professionalità, in modo che tu possa goderti il mare in tutta sicurezza e tranquillità.</p>
                         </div>
                     </div>
                 </div>
@@ -131,7 +144,7 @@
                         <img src="./yachtclub1.jpg" class="mb-3 rounded card-img-uniform" alt="Yacht Club Esclusivo" width="100%" loading="lazy">
                         <div class="card-content">
                             <h5>Yacht Club Esclusivo</h5>
-                            <p>Benvenuti al nostro Yacht Club esclusivo! Come socio, avrai accesso a un mondo di privilegi e servizi di alta qualità. Goditi la nostra piscina di lusso, perfetta per rilassarti e socializzare con altri appassionati di mare. Partecipa ai nostri eventi esclusivi, dalle cene di gala alle regate, e crea ricordi indimenticabili con la nostra comunità. Il nostro club è progettato per offrire un'esperienza unica e personalizzata, con servizi e strutture pensate per soddisfare ogni tua esigenza. Dai lounge bar ai ristoranti, ogni dettaglio è curato per garantire il massimo comfort e lusso. Unisciti a noi e diventa parte di una comunità di appassionati di mare che condividono la tua passione per il lusso e l'eleganza.</p>
+                            <p>Benvenuti al nostro Yacht Club esclusivo! Come socio, avrai accesso a un mondo di privilegi e servizi di alta qualità. Goditi la nostra piscina, perfetta per rilassarti e socializzare con altri appassionati di mare. Partecipa ai nostri eventi esclusivi, dalle cene di gala ad eventi sportivi, e crea ricordi indimenticabili con la nostra comunità. Il nostro club è progettato per offrire un'esperienza unica e personalizzata, con servizi e strutture pensate per soddisfare ogni tua esigenza. Dai lounge bar ai ristoranti, ogni dettaglio è curato per garantire il massimo comfort e lusso. Unisciti a noi e diventa parte di una comunità di appassionati di mare che condividono la tua passione per il lusso e l'eleganza.</p>
                         </div>
                     </div>
                 </div>
@@ -175,11 +188,12 @@
 
     <!-- FOOTER -->
     <footer class="footer py-3 px-4 d-flex justify-content-between align-items-center bg-white border-top" role="contentinfo">
-        <span class="developed-by">Codebase dev'd by Attilio Comes</span>
+        <span class="developed-by"><a href="https://www.linkedin.com/in/attilio-comes/" target="_blank" rel="noopener" class="dev-link">Codebase dev'd by Attilio Comes</a></span>
         <span class="social-icons d-flex gap-3">
-            <a href="#" aria-label="Facebook" class="text-dark"><i class="fab fa-facebook fa-lg"></i></a>
-            <a href="#" aria-label="Instagram" class="text-dark"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="#" aria-label="YouTube" class="text-dark"><i class="fab fa-youtube fa-lg"></i></a>
+            <a href="tel:+39041490896" aria-label="Chiama Marina del Sole" class="text-dark"><i class="fas fa-phone fa-lg"></i></a>
+            <a href="https://www.facebook.com/marinadelsolechioggia/?locale=it_IT" aria-label="Facebook" class="text-dark"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="https://www.instagram.com/explore/locations/1024565268/osteria-marina-del-sole/" aria-label="Instagram" class="text-dark"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="https://www.youtube.com/watch?v=756mxwyo0b4" aria-label="YouTube" class="text-dark"><i class="fab fa-youtube fa-lg"></i></a>
         </span>
     </footer>
 
