@@ -171,9 +171,9 @@ h1, .display-1 {
     margin-bottom: 0;
 }
 .servizi-card img {
-    flex: 0 0 180px;
-    height: 180px !important;
-    max-height: 180px;
+    flex: 0 0 220px;
+    height: 220px !important;
+    max-height: 220px;
     object-fit: cover;
     width: 100%;
 }
@@ -392,8 +392,8 @@ h1, .display-1 {
         font-size: 0.98rem;
     }
     .servizi-card img {
-        height: 80px !important;
-        max-height: 80px;
+        height: 180px !important;
+        max-height: 180px;
     }
 }
 
@@ -659,8 +659,8 @@ header#header {
     font-size: 1.05rem;
   }
   .servizi-card img {
-    height: 120px !important;
-    max-height: 120px;
+    height: 180px !important;
+    max-height: 180px;
   }
   .g-4 {
     gap: 16px !important;
@@ -713,8 +713,8 @@ header#header {
     font-size: 0.98rem;
   }
   .servizi-card img {
-    height: 80px !important;
-    max-height: 80px;
+    height: 180px !important;
+    max-height: 180px;
   }
   .footer {
     font-size: 0.93rem;
