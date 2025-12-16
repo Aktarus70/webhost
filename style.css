@@ -134,7 +134,8 @@ h1, .display-1 {
 
 /* ------------ Chi Siamo ------------ */
 .chi-siamo-section img {
-    max-width: 95%;
+   margin-top: 60px;  
+  max-width: 95%;
     border: 2px solid var(--color-blue);
     box-shadow: 0 4px 16px rgba(23,102,166,0.12);
 }
