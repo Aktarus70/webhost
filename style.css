@@ -45,7 +45,7 @@ h1, .display-1 {
     transition: background var(--transition-fast), box-shadow var(--transition-fast);
     box-shadow: 0 2px 8px rgba(23,102,166,0.07);
     border: none;
-    margin-top: 2cm !important;
+    margin-top: 5.9vh !important;
 }
 .cta-btn:hover, .submit-btn:hover, .cta-btn:focus, .submit-btn:focus {
     background: var(--color-gold);
@@ -847,4 +847,5 @@ header#header {
     margin-top: -12px !important; /* Abbassa il logo nella navbar su schermi piccoli (es. 390x844) */
   }
 }
+
 
