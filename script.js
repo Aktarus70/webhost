@@ -1,4 +1,37 @@
-// Chiudi menu hamburger al click su una voce
+const heroVideo = document.getElementById('heroVideo');
+const videoLoader = document.getElementById('videoLoader');
+
+if (heroVideo) {
+    // Quando il video ha abbastanza dati per riprodursi
+    heroVideo.addEventListener('canplay', function() {
+        // Nascondi il loader
+        if (videoLoader) {
+            videoLoader.classList.add('hidden');
+        }
+        
+        heroVideo.classList.add('loaded');
+        
+        heroVideo.play().catch(err => {
+            console.log('Autoplay potrebbe essere bloccato dal browser:', err);
+        });
+    });
+
+    // Gestione errori video
+    heroVideo.addEventListener('error', function(e) {
+        console.error('Errore nel caricamento del video:', e);
+        if (videoLoader) {
+            videoLoader.classList.add('hidden');
+        }
+       
+    });
+
+    // Forza il caricamento del video
+    heroVideo.load();
+}
+
+// ==========================================
+// CHIUSURA MENU HAMBURGER AL CLICK
+// ==========================================
 document.querySelectorAll('#mainNavbar .nav-link').forEach(link => {
     link.addEventListener('click', function() {
         const navbarCollapse = document.getElementById('mainNavbar');
@@ -13,12 +46,10 @@ document.querySelectorAll('#mainNavbar .nav-link').forEach(link => {
         }
     });
 });
-// JS Vanilla per:
-// 1. Scroll smooth anchor
-// 2. Validazione form real-time
-// 3. Modal successo invio
 
-// Navbar nera dopo scroll di 2cm (20px)
+// ==========================================
+// NAVBAR NERA DOPO SCROLL
+// ==========================================
 window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
     if (window.scrollY > 20) {
@@ -28,7 +59,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
-// Blocca la navbar nera dopo il primo scroll oltre il 2cm
+// Blocca la navbar nera dopo il primo scroll oltre i 20px
 let navbarLocked = false;
 window.addEventListener('scroll', function lockNavbar() {
     const header = document.getElementById('header');
@@ -41,7 +72,9 @@ window.addEventListener('scroll', function lockNavbar() {
     }
 });
 
-// Smooth scroll per anchor links e accessibilità
+// ==========================================
+// SMOOTH SCROLL PER ANCHOR LINKS
+// ==========================================
 document.querySelectorAll('a.nav-link, .cta-btn').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         const href = anchor.getAttribute('href');
@@ -60,8 +93,9 @@ document.querySelectorAll('a.nav-link, .cta-btn').forEach(anchor => {
     });
 });
 
-//------------- FORM LOGICA COMPLETA --------------//
-
+// ==========================================
+// FORM LOGICA COMPLETA
+// ==========================================
 const contactForm = document.getElementById("contactForm");
 const submitBtn = document.getElementById("submitBtn");
 
@@ -73,13 +107,15 @@ function validateNome(nome) {
     if (!onlyLettersRegex.test(nome)) return "Solo lettere ammesse";
     return "";
 }
+
 function validateCognome(cognome) {
     if (cognome.length < 2) return "Cognome troppo corto";
     if (!onlyLettersRegex.test(cognome)) return "Solo lettere ammesse";
     return "";
 }
+
 function validateDob(dob) {
-    // Regex formato base
+  
     if (!/^\d{2}\/\d{2}\/\d{4}$/.test(dob)) return "Formato data non valido (gg/mm/aaaa)";
     const [d, m, y] = dob.split("/");
     const birthDate = new Date(`${y}-${m}-${d}`);
@@ -94,6 +130,7 @@ function validateDob(dob) {
     if (age < 18) return "Devi essere maggiorenne";
     return "";
 }
+
 function validateMessaggio(msg) {
     if (msg.length < 10) return "Messaggio troppo corto";
     return "";
@@ -101,9 +138,13 @@ function validateMessaggio(msg) {
 
 // Event delegation: validazione durante digitazione
 ["nome", "cognome", "dob", "messaggio"].forEach(field => {
-    document.getElementById(field).addEventListener("input", validateField);
-    document.getElementById(field).addEventListener("blur", validateField);
+    const fieldElement = document.getElementById(field);
+    if (fieldElement) {
+        fieldElement.addEventListener("input", validateField);
+        fieldElement.addEventListener("blur", validateField);
+    }
 });
+
 function validateField(e) {
     const field = e.target;
     let error = "";
@@ -114,12 +155,14 @@ function validateField(e) {
         case "messaggio": error = validateMessaggio(field.value.trim()); break;
     }
     const errorDiv = document.getElementById(field.id + "Error");
-    if (error) {
-        field.classList.add("invalid");
-        errorDiv.textContent = error;
-    } else {
-        field.classList.remove("invalid");
-        errorDiv.textContent = "";
+    if (errorDiv) {
+        if (error) {
+            field.classList.add("invalid");
+            errorDiv.textContent = error;
+        } else {
+            field.classList.remove("invalid");
+            errorDiv.textContent = "";
+        }
     }
     checkFormValid();
 }
@@ -145,15 +188,17 @@ function checkFormValid() {
 }
 
 // Submit form: mostra alert/modal successo, reset campi
-contactForm.addEventListener("submit", function(e) {
-    e.preventDefault();
-    submitBtn.disabled = true;
-    // Modal/alert di successo (accessibile)
-    showSuccessModal();
-    contactForm.reset();
-    Array.from(contactForm.querySelectorAll(".invalid")).forEach(el => el.classList.remove("invalid"));
-    Array.from(contactForm.querySelectorAll(".invalid-feedback")).forEach(el => el.textContent = "");
-});
+if (contactForm) {
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        // Modal/alert di successo (accessibile)
+        showSuccessModal();
+        contactForm.reset();
+        Array.from(contactForm.querySelectorAll(".invalid")).forEach(el => el.classList.remove("invalid"));
+        Array.from(contactForm.querySelectorAll(".invalid-feedback")).forEach(el => el.textContent = "");
+    });
+}
 
 // Modal di successo
 function showSuccessModal() {
@@ -197,12 +242,17 @@ function showSuccessModal() {
     }, 2700); // Chiudi dopo 2,7s
 }
 
-// Keyboard navigation: focus visibile
+// ==========================================
+// KEYBOARD NAVIGATION - FOCUS VISIBILE
+// ==========================================
 document.body.addEventListener("keyup", function(e) {
     if (e.key === "Tab") {
-        document.activeElement.classList.add("tab-focus");
+        if (document.activeElement) {
+            document.activeElement.classList.add("tab-focus");
+        }
     }
 });
+
 document.body.addEventListener("mousedown", function() {
     document.querySelectorAll(".tab-focus").forEach(el => el.classList.remove("tab-focus"));
 });
